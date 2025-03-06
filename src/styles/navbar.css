@@ -1,0 +1,39 @@
+/* Navbar container */
+.navbar {
+    background-color:  #00008B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+  }
+  
+  /* Logo */
+  .logo-img {
+    height: 60px;
+  }
+  
+  /* Navbar links container */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Individual link styling */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  
+  /* Hover effect */
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Logo container */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
