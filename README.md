@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# GPA Monitoring Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project is a frontend web application built with React that aims to automate the process of reviewing student and teacher performance data. It allows school admin staff to efficiently analyze student and teacher data through an interactive web portal. This tool helps to identify top-performing students, low-performing students, and track cohort performance, as well as provide insights into teaching staff's effectiveness.
 
-## Available Scripts
+## Features
+- **Students Page**: Displays a table of all students with their name, cumulative GPA, and last semester’s GPA. Allows sorting by any field and includes a line chart comparing average semester GPA and cumulative GPA across 8 semesters.
+- **Student Page**: Provides detailed information about a selected student, including their semester and cumulative GPA across 8 semesters.
+- **Teachers Page**: Displays a table of all teachers with their name, average semester GPA of students last semester, and average cumulative GPA of students. Includes a line chart showing the same GPA comparison across 8 semesters.
+- **Teacher Page**: Provides detailed information about a selected teacher and their students' performance over the last 8 semesters.
 
-In the project directory, you can run:
+## Technologies Used
+- **Frontend**: React.js
+- **Charting Library**: Chart.js
+- **State Management**: React State
 
-### `npm start`
+## Setup Instructions
+1. Clone the repository to your local machine:
+   `git clone https://github.com/mfchloe/gpa-monitoring-tool`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigate to the project directory:
+   `cd gpa-monitoring-tool`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Install dependencies:
+   `npm install`
+   
+4. Run the application:
+   `npm start`
 
-### `npm test`
+   This will start the application on http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pages Breakdown
+### Students Page
+- Displays a table with the following columns: Name, Cumulative GPA, Last Semester’s GPA
+- The table is sortable by name, cumulative GPA, or last semester’s GPA.
+- Displays a line chart with two series: Average semester GPA of all students across 8 semesters and Average cumulative GPA of all students across 8 semesters
+- Clicking a student's name redirects to the Student Page.
 
-### `npm run build`
+### Student Page
+- Displays the following information: Student's name, Cumulative GPA, Last Semester’s GPA
+- Displays a line chart showing: Semester GPA for each of the last 8 semesters and Cumulative GPA over the last 8 semesters
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Teachers Page
+- Displays a table with the following columns: Name, Average Semester GPA of students last semester, Average Cumulative GPA of students
+- The table is sortable by name, average semester GPA, or average cumulative GPA.
+- Displays a line chart with two series: Average semester GPA of all students across 8 semesters and Average cumulative GPA of all students across 8 semesters
+- Clicking a teacher's name redirects to the Teacher Page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Teacher Page
+- Displays the following information: Teacher's name, Average semester GPA of students, Average cumulative GPA of students
+- Displays a line chart showing: Average semester GPA of students taught by the teacher over 8 semesters and Average cumulative GPA of students taught by the teacher
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Home page
+- A welcome page with image carousel for aesthetic purposes
 
-### `npm run eject`
+## Assumptions
+- The school has 10 students and 2 teachers.
+- The GPA data for each student is calculated based on mock data.
+- No authentication is required.
+- The data is not stored in a database; it's mocked in the application for simplicity.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Improvements
+- Implementing real-time data fetching through APIs and integrating with a backend service.
+- Adding authentication for admin users since school data is important
+- Enhancing the UI with additional information and styling.
+- Refactor the Teacher Table and Student Table into a single, generic table component that accepts different column configurations and data structures. This will makes the tables more reusable across various pages and features.
+- Add a feature that allows bulk data uploads using Excel sheets. Since the school initially used Excel for data entry, this will make it easier to transition and populate the application with existing data quickly.
+- Add more functionalities such as reminders, addition of users, data analytics, etc.
